@@ -1,22 +1,33 @@
 <?php
     /**
-     * VARIABLES Y CONSTANTES
-     * Para declarar variables se utiliza el signo peso($) antes del nombre de cada variable y en caso de ser estricto se coloca el tipo de variable entre parentesis.
-     *  @param edad *Variable númerica.
+     * TIPOS DE DATOS
+     *  @param logueado *Variable booleana.
+     * @param numero *Variable de númerica.
+     * @param Float *Variable flotante.
      * @param nombre *Variable de texto.
-     * @param es_valido *Variable booleana.
+     * @param Array *Variable de tipo .
      */
 
-    $edad = (int) "25";
-    var_dump($edad); //Se utilizó el var_dumb para imprimir y verificar el tipo de variable.
+    $logueado = true;
+    var_dump($logueado);
 
-    echo "<br>"; //Imprimo un salto de linea
+    echo("<br>");
 
-    $nombre = "Juan";
+    $numero = 200;
+    var_dump($numero);
+
+    echo("<br>");
+
+    $float = 15.2;
+    var_dump($float);
+
+    echo("<br>");
+
+    $nombre = "Ivan";
     var_dump($nombre);
 
-    echo "<br>"; //Imprimo un salto de linea
-    
-    $es_valido = true;
-    var_dump($es_valido);
+    echo("<br>");
+
+    $array = [];
+    var_dump($array);
 ?>
