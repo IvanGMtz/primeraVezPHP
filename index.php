@@ -1,19 +1,22 @@
 <?php
     /**
-     * FUNCIONES DE SALIDA
-     *  @param echo *Función basica para imprimir desde el PHP al html.
-     * @param printif *Parecida a la anterior pero con una cadena de texto a la vez.
-     * @param sprintif *Parecida a la anterior pero devuelve la cadena formateada.
+     * VARIABLES Y CONSTANTES
+     * Para declarar variables se utiliza el signo peso($) antes del nombre de cada variable y en caso de ser estricto se coloca el tipo de variable entre parentesis.
+     *  @param edad *Variable númerica.
+     * @param nombre *Variable de texto.
+     * @param es_valido *Variable booleana.
      */
-    echo "Texto a imprimir<br>";
 
-    $texto = "Mundo";
-    printf("Hola %s", $texto);
+    $edad = (int) "25";
+    var_dump($edad); //Se utilizó el var_dumb para imprimir y verificar el tipo de variable.
 
-    echo"<br>";
+    echo "<br>"; //Imprimo un salto de linea
 
-    $texto1 = "Mundooo";
-    $mensaje = sprintf("Hola %s", $texto1);
-    echo $mensaje;
+    $nombre = "Juan";
+    var_dump($nombre);
+
+    echo "<br>"; //Imprimo un salto de linea
     
+    $es_valido = true;
+    var_dump($es_valido);
 ?>
