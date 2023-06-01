@@ -69,7 +69,7 @@ $personas= array(
 * array_unique(): Elimina los valores duplicados de un array.
 * array_intersect(): Devuelve un array con los valores comunes a todos los arrays dados.
 * array_diff(): Devuelve un array con los valores del primer array que no están presentes en los arrays adicionales.
-array_push(): Agrega uno o más elementos al final de un array.
+* array_push(): Agrega uno o más elementos al final de un array.
 array_pop(): Extrae y elimina el último elemento de un array.
 array_reverse(): Revierte el orden de los elementos en un array.
 array_sum(): Devuelve la suma de todos los valores de un array numérico.
@@ -184,4 +184,11 @@ print_r(array_intersect($A,$B));
 */
 echo("<h1>array_diff</h1>");
 print_r(array_diff($A,$B));
+
+/**
+* ? Ejemplo de array_push()*
+*/
+echo("<h1>array_push</h1>");
+array_push($B, 3, 4);
+print_r($B);
 ?>
