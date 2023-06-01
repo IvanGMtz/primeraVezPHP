@@ -71,7 +71,7 @@ $personas= array(
 * array_diff(): Devuelve un array con los valores del primer array que no están presentes en los arrays adicionales.
 * array_push(): Agrega uno o más elementos al final de un array.
 * array_pop(): Extrae y elimina el último elemento de un array.
-array_reverse(): Revierte el orden de los elementos en un array.
+* array_reverse(): Revierte el orden de los elementos en un array.
 array_sum(): Devuelve la suma de todos los valores de un array numérico.
 array_product(): Devuelve el producto de todos los valores de un array numérico.
 array_chunk(): Divide un array en fragmentos más pequeños.
@@ -197,5 +197,11 @@ print_r($B);
 */
 echo("<h1>array_pop</h1>");
 array_pop($B);
-print_r($B)
+print_r($B);
+
+/**
+* ? Ejemplo de array_reverse()*
+*/
+echo("<h1>array_reverse</h1>");
+print_r(array_reverse($B));
 ?>
