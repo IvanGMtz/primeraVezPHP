@@ -68,7 +68,7 @@ $personas= array(
 * array_rand(): Devuelve una o varias claves aleatorias de un array.
 * array_unique(): Elimina los valores duplicados de un array.
 * array_intersect(): Devuelve un array con los valores comunes a todos los arrays dados.
-array_diff(): Devuelve un array con los valores del primer array que no están presentes en los arrays adicionales.
+* array_diff(): Devuelve un array con los valores del primer array que no están presentes en los arrays adicionales.
 array_push(): Agrega uno o más elementos al final de un array.
 array_pop(): Extrae y elimina el último elemento de un array.
 array_reverse(): Revierte el orden de los elementos en un array.
@@ -179,4 +179,9 @@ echo("<h1>array_intersect</h1>");
 $B= array(1,2);
 print_r(array_intersect($A,$B));
 
+/**
+* ? Ejemplo de array_diff()*
+*/
+echo("<h1>array_diff</h1>");
+print_r(array_diff($A,$B));
 ?>
