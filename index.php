@@ -1,5 +1,5 @@
 <?php
-**
+/**
 * Todo Array indexado*
 * Array que a cada posición se le asigna un número partiendo de 0.
 */
@@ -159,7 +159,10 @@ if(in_array(43, $edades)){
 };
 
 /**
-* ? Ejemplo de array_rand() con array edades*
+* ? Ejemplo de array_rand() con array nombres despues del metodo Flit*
 */
 echo("<h1>array_rand</h1>");
+$nombresAlt = array_rand($Flip, 3);
+print_r($nombresAlt);
+
 ?>
