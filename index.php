@@ -74,10 +74,10 @@ $personas= array(
 * array_reverse(): Revierte el orden de los elementos en un array.
 * array_sum(): Devuelve la suma de todos los valores de un array numérico.
 * array_product(): Devuelve el producto de todos los valores de un array numérico.
-array_chunk(): Divide un array en fragmentos más pequeños.
-array_keys(): Devuelve todas las claves de un array.
-array_values(): Devuelve todos los valores de un array.
-array_walk(): Aplica una función de devolución de llamada a cada elemento de un array.
+* array_chunk(): Divide un array en fragmentos más pequeños.
+* array_keys(): Devuelve todas las claves de un array.
+* array_values(): Devuelve todos los valores de un array.
+* array_walk(): Aplica una función de devolución de llamada a cada elemento de un array.
 */
 
 /**
@@ -221,4 +221,49 @@ print_r($A);
 echo "<br>";
 print_r(array_product($A));
 
+/**
+* ? Ejemplo de array_chunk()*
+*/
+echo("<h1>array_chunk</h1>");
+$vocales = array('a', 'e', 'i', 'o', 'u');
+print_r(array_chunk($vocales, 2)); // Crea array de arrays de n valores, por defecto toma falso y empieza la secuancia por cada array nuevo
+echo "<br>"; echo "<br>";
+print_r(array_chunk($vocales, 2, true)); //Crea array de arrays de n valores, mantiene la secuencia sin importar que sean arrays diferentes
+
+/**
+* ? Ejemplo de array_keys() edades*
+*/
+echo("<h1>array_keys</h1>");
+print_r(array_keys($edades));
+
+/**
+* ? Ejemplo de array_values() edades*
+*/
+echo("<h1>array_values</h1>");
+print_r(array_values($edades));
+
+/**
+* ? Ejemplo de array_walk()*
+*/
+echo("<h1>array_walk</h1>");
+$frutas = array("d" => "limón", "a" => "naranja", "b" => "banana", "c" => "manzana");
+
+function test_alter(&$elemento1, $clave, $prefijo)
+{
+    $elemento1 = "$prefijo: $elemento1";
+}
+
+function test_print($elemento2, $clave)
+{
+    echo "$clave. $elemento2<br />\n";
+}
+
+echo "Antes ...:";
+echo "<br>";
+array_walk($frutas, 'test_print');
+
+array_walk($frutas, 'test_alter', 'fruta');
+echo "... y después:";
+echo "<br>";
+array_walk($frutas, 'test_print');
 ?>
