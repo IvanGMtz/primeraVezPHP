@@ -1,60 +1,89 @@
 <?php
-echo "<pre>";
-
 /**
- * ! Isset() y Empty()*
+ *  ! ESTRUCTURAS DE CONTROL*
+ * 
+ * ? Control condicionales (if, switch)*
+ * ? Control De repetición (for, while, do-while)*
+ * ? Control De excepciones (try, catch)*
  */
 
-/**
- * @param miVariable *Variable principalmente declarada pero vacía
- * ? Ejemplo de metodo Isset, verifica sí la variable está definida además de contener algun valor*
- */
-echo "<h2>Isset</h2>";
- $miVariable;
-if(isset($miVariable)){
-   echo "La variable está definida y tiene un valor";
+
+   /**
+    * todo ESTRUCTURAS DE CONTROL CONDICIONALES
+    */
+
+$autenticado=true;
+$admin=false;
+echo "<h3>If</h3>";
+if ($autenticado && $admin){
+   echo "Usuario autenticado correctamente";
 }else{
-   echo "La variable no está definida o no tiene valor";
-};
-$miVariable="Hola mundo";
-echo "<br>";
-$resultado= (isset($miVariable))? "La variable está definida y tiene un valor": "La variable no está definida o no tiene valor";
-echo $resultado;
+   echo "Usuario no autenticado, inicia sesión";
+}
+echo "<br>";echo "<br>";
 
-echo "<br><h2>Empty</h2>";
-$miVariable="";
-/**
- *  ? Ejemplo metodo Empty, verifica sí la variable está vacia o no está definida* 
- */
-if(empty($miVariable)){
-   echo "La variable está vacia o no está definida";
-}else{
-   echo "La variable tiene un valor";
-};
-echo "<br>";
-
-$clientes=[];
-$clientes2=array();
-$clientes3=array("Pedro", "Juan", "Karen");
-$clientes=[
-   "nombre"=>"Juan",
-   "saldo"=>300
+echo "<h3>If Anidado</h3>";
+$cliente=[
+   "name"=>"Juan",
+   "balance"=> 0,
+   "info"=>[
+      "tipo"=>"regular"
+   ]
 ];
+if(!empty($cliente)){
+   echo "El arreglo cliente no está vacio<br>";
+   if($cliente["balance"]>0){
+      echo "El cliente está largo";
+   }else{
+      echo "Está limpio";
+   }
+}
+echo "<br>";echo "<br>";
+echo "<h3>Switch</h3>";
+$tecnologia="HTML";
+switch($tecnologia){
+   case "PHP":
+      echo "Excelente lenguaje";
+      break;
+   case "JavaScript":
+      echo "Lenguaje de la web";
+      break;
+   case "HTML":
+      echo "Emmmmm...";
+      break;
+   default:
+      echo "Algún lenguaje, no sé cual";
+      break;
 
-// Empty - Revisión de los arrays anteriores
-var_dump(empty($clientes)); //false
-var_dump(empty($clientes2));//true
-var_dump(empty($clientes3));//false
-echo "<br>";
-// Isset - Revision de los arreglos
-var_dump(isset($clientes4));//false
-var_dump(isset($clientes));//true
-var_dump(isset($clientes2));//true
-var_dump(isset($clientes3));//true
-echo "<br>";
-// Isset - Revision de las propiedades del arreglo
-var_dump(isset($clientes["nombre"]));//true
-var_dump(isset($clientes["saldo"]));//true
-echo "<br>";
+}
 
+   /**
+    * todo ESTRUCTURAS DE CONTROL REPETITIVAS
+    */
+echo "<h3>While</h3>";
+$i=0;
+while($i<10){
+   echo $i . "-";
+   $i++;
+}
+echo "<h3>Do While</h3>";
+$i=100;
+do{
+   echo $i . "-";
+   $i++;
+}while($i<10);
+echo "<h3>For Each</h3>";
+$clients= array("Pedro", "Juan", "Karen");
+foreach($clients as $user):
+   echo $user."<br>";
+endforeach;
+echo "<br>";echo "<br>";
+$Usuario=[
+   "Name"=>"Juan",
+   "Balance"=>200,
+   "Type"=>"Premium"
+];
+foreach($Usuario as $key => $value):
+   echo $key." ==> ".$value."<br>";
+endforeach;
 ?>
